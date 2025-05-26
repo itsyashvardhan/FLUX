@@ -234,27 +234,7 @@ class FileTransferUI:
             border_radius=10
         )
     
-    def validate_transfer_code(self, e):
-        """Validate the transfer code input"""
-        from .network import get_transfer_by_code
-        
-        code = self.transfer_code_field.value.strip()
-        if not code:
-            self.transfer_code_field.error_text = "Transfer code is required"
-        elif not code.isdigit():
-            self.transfer_code_field.error_text = "Transfer code must contain only digits"
-        elif len(code) != 6:
-            self.transfer_code_field.error_text = "Transfer code must be 6 digits"
-        else:
-            # Check if code exists and is valid
-            transfer_info = get_transfer_by_code(code)
-            if not transfer_info:
-                self.transfer_code_field.error_text = "Invalid or expired transfer code"
-            elif transfer_info['status'] != 'waiting':
-                self.transfer_code_field.error_text = "This transfer code is no longer valid"
-            else:
-                self.transfer_code_field.error_text = None
-        self.page.update()
+    # Removed validate_transfer_code method as it's obsolete with relay server
 
     def handle_receive_click(self, e):
         """Handle receive button click"""
@@ -276,7 +256,7 @@ class FileTransferUI:
 
     def build_receive_section(self) -> ft.Container:
         """Build the receive files section"""
-        self.transfer_code_field.on_change = self.validate_transfer_code
+        # self.transfer_code_field.on_change = self.validate_transfer_code # Removed
         return ft.Container(
             content=ft.Column([
                 ft.Row([
