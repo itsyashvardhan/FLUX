@@ -11,4 +11,4 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You may receive a copy of the GNU General Public License
-along with this program. Also, see https://www.gnu.org/licenses/
+along with this program. Also, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/)
