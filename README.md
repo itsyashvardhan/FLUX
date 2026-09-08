@@ -1,5 +1,3 @@
-# FLUX
-
 <p align="center">
   <img src="assets/flux-share-banner.svg" alt="FLUX — fast, friendly file sharing across devices" width="900">
 </p>
